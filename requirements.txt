@@ -23,3 +23,6 @@ pillow
 # Deployment 
 streamlit
 
+# Voice pipeline
+librosa # handles the voices, audios
+resemblyzer # creates embeddings for the audios
