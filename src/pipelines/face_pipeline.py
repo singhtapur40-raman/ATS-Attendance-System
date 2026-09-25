@@ -18,7 +18,7 @@ def load_dlib_models():
         face_recognition_models.pose_predictor_model_location()
     )
 
-    face_recog = dlib.face_recognition_models_v1(
+    face_recog = dlib.face_recognition_model_v1(
         face_recognition_models.face_recognition_model_location()
     )
 
