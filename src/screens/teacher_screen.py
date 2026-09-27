@@ -4,6 +4,7 @@ from src.components.header import header_dashboard
 from src.components.footer import footer_dashboard
 from src.database.db import create_teacher, check_teacher_exists, teacher_login, get_teacher_subjects
 from src.components.dialoge import create_subject_dialoge, share_subject_dialoge
+from src.components.subject_card import subject_card
  
 def teacher_screen():
 
@@ -92,7 +93,7 @@ def teacher_tab_manage_subjects():
     if subjects:
         for sub in subjects:
             stats = [
-                ('👤', 'Students', sub['total_students']),
+                ('👥', 'Students', sub['total_students']),
                 ('🕰️', 'Classes', sub['total_classes'])
             ]
         def share_btn():
@@ -103,7 +104,7 @@ def teacher_tab_manage_subjects():
         subject_card(
             name = sub['name'], 
             code = sub['subject_code'], 
-            secton = sub['section'], 
+            section = sub['section'], 
             stats = stats,
             footer_callback = share_btn
         )
