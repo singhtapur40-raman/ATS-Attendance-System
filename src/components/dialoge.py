@@ -21,3 +21,7 @@ def create_subject_dialoge(teacher_id):
                 st.error(f"Error : {str(e)}")
         else:
             st.warning("Please fill all the fields!")
+
+
+def share_subject_dialoge(name, subject_code):
+    
