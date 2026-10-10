@@ -32,7 +32,7 @@ def share_subject_dialoge(name, subject_code):
 
     st.header("Scan to Join!")
 
-    qr = segno.join(join_url)
+    qr = segno.make(join_url)
 
     out = io.BytesIO()
 
