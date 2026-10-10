@@ -24,3 +24,4 @@ def create_subject_dialoge(teacher_id):
 
 
 def share_subject_dialoge(name, subject_code):
+    pass
