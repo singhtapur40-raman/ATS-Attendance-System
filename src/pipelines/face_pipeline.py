@@ -69,7 +69,7 @@ def get_trained_model():
     except ValueError:
         pass
 
-    return {"Classifier": clf, "X": X, "Y": Y }
+    return {"clf": clf, "X": X, "Y": Y }
 
 
 def train_classifier():
@@ -90,9 +90,6 @@ def predict_attendance(class_image_np):
 
     if not model_data:
         return detected_student, [], len(encodings)   #detected embedding values, detected students list, no of students
-    
-    print("Model data type:", type(model_data))
-    print("Model data:", model_data)
 
     clf = model_data['clf']
     X_train = model_data['X']
