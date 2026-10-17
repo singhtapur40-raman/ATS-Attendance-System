@@ -1,8 +1,9 @@
 import streamlit as st
-from src.database.db import create_subject
+from src.database.db import create_subject, enroll_student_to_subject
 import segno 
 import io
-
+from src.database.config import supabase
+import time
 
 @st.dialog("Create New Subject")
 def create_subject_dialoge(teacher_id):
@@ -50,3 +51,27 @@ def share_subject_dialoge(name, subject_code):
     with col2: 
         st.markdown('### scan to Join')
         st.image(out.getvalue(), use_container_width=True, caption='QR-Code for joining class')
+
+
+@st.dialog("Enroll in Subject")
+def enroll_dialogue():
+    st.write('Enter the subject code:')
+    join_code = st.text_input('Subject Code', placeholder='Eg: CS102M')
+
+    if st.button('Enroll Now!!', type='primary', width='stretch'):
+        if join_code: 
+            res = supabase.table('subjects').select('subject_id, name, subject_code').eq('subject_code', join_code).execute()
+            if res.data():
+                subject = res.data[0]
+                stud_id = st.session_state.student_data['student_id']
+
+                check = supabase.table('subject_students').select('*').eq('subject_id', subject["subject_id"]).eq('student_id', stud_id).execute()
+                if check.data:
+                    st.warning('You are already enrolled in this program!')
+                else:
+                    enroll_student_to_subject(stud_id, subject['subject_id'])
+                    st.success('Successfully Enrolled!')
+                    time.sleep(1)
+                    st.rerun()
+        else: 
+            st.warning('Please enter a valid subject code!')

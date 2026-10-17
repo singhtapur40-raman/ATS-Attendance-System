@@ -61,3 +61,7 @@ def get_teacher_subjects(teacher_id):
         sub.pop('attendance_logs', None)
 
     return subjects
+
+
+def enroll_student_to_subject(stud_id, subj_id):
+    pass 
