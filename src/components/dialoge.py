@@ -61,7 +61,7 @@ def enroll_dialogue():
     if st.button('Enroll Now!!', type='primary', width='stretch'):
         if join_code: 
             res = supabase.table('subjects').select('subject_id, name, subject_code').eq('subject_code', join_code).execute()
-            if res.data():
+            if res.data:
                 subject = res.data[0]
                 stud_id = st.session_state.student_data['student_id']
 
