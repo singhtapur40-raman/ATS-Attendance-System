@@ -3,7 +3,7 @@ from src.ui.base_layout import style_background_dashboard, style_base_layout
 from src.components.header import header_dashboard
 from src.components.footer import footer_dashboard
 from src.database.db import create_teacher, check_teacher_exists, teacher_login, get_teacher_subjects
-from src.components.dialoge import create_subject_dialoge, share_subject_dialoge
+from src.components.dialoge import create_subject_dialoge, share_subject_dialoge, add_photos_dialog
 from src.components.subject_card import subject_card
  
 def teacher_screen():
@@ -75,7 +75,37 @@ def teacher_dashboard():
     footer_dashboard()
     
 def teacher_tab_take_attendance():
+    teacher_id = st.session_state.teacher_data['teacher_id']
     st.header('Take AI Attendance')
+
+    if 'attendance_imgs' not in st.session_state:
+        st.session_state.attendance_imgs = []
+
+    subjects = get_teacher_subjects(teacher_id)
+
+    if not subjects:
+        st.warning("You haven't created any subjects yet! Please create one..")
+        return
+    
+    subject_options = {f"{s['name']} - {s['subjects']}" : s['subject_id'] for s in subjects}
+
+    col1, col2 = st.columns([3, 1])
+
+    with col1:
+        selected_subject_label = st.selectbox('Select Subject', options = list(subject_options.keys()))
+
+    with col2:
+        if st.button('Add Photos', type='primary', icon=':material/photo_prints:', width='stretch'):
+            add_photos_dialog()
+
+
+    selected_subject_id = subject_options[selected_subject_label]
+
+    st.divider()
+
+
+
+
 
 
 def teacher_tab_manage_subjects():
