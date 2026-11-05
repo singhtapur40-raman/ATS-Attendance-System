@@ -83,3 +83,7 @@ def get_student_attendance(std_id):
     response = supabase.table('attendance_logs').select('*, subjects(*)').eq('student_id', std_id).execute()
     return response.data
 
+
+def create_attendance(logs):
+    response = supabase.table('attendance_logs').insert(logs).execute()
+    return response.data
