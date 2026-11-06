@@ -85,7 +85,7 @@ def teacher_tab_take_attendance():
     st.header('Take AI Attendance')
 
     if 'attendance_imgs' not in st.session_state:
-        st.session_state.attendance_imgs = []
+        st.session_state.attendance_images = []
 
     subjects = get_teacher_subjects(teacher_id)
 
