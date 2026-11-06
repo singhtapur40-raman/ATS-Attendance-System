@@ -93,7 +93,7 @@ def teacher_tab_take_attendance():
         st.warning("You haven't created any subjects yet! Please create one..")
         return
     
-    subject_options = {f"{s['name']} - {s['subjects']}" : s['subject_id'] for s in subjects}
+    subject_options = {f"{s['name']} - {s['subject_code']}": s['subject_id'] for s in subjects}
 
     col1, col2 = st.columns([3, 1], vertical_alignment='bottom')
 
