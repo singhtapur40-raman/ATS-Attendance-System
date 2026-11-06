@@ -9,7 +9,7 @@ pandas
 scikit-learn
 dlib-bin
 git+https://github.com/ageitgey/face_recognition_models
-setuptools
+setuptools<81
 
 # Database 
 supabase 
@@ -29,3 +29,4 @@ pillow
 # Voice pipeline
 librosa # handles the voices, audios
 resemblyzer # creates embeddings for the audios
+webrtcvad
