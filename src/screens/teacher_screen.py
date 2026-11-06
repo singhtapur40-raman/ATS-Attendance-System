@@ -246,7 +246,7 @@ def teacher_tab_attendance_records():
 
     display_df = (summary.sort_values(by='ts_group', ascending=False)[['Time', 'Subject', 'Subject Code', 'Attendance Stats']])
 
-    st.DataFrame(display_df, width='stretch', hide_index=True)
+    st.dataframe(display_df, width='stretch', hide_index=True)
 
 
 
