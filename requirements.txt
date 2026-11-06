@@ -1,3 +1,7 @@
+# Deployment 
+streamlit
+
+
 numpy 
 pandas
 
@@ -17,11 +21,10 @@ bcrypt
 # QRCode 
 segno 
 
+
 # Image Pre-Processing
 pillow
 
-# Deployment 
-streamlit
 
 # Voice pipeline
 librosa # handles the voices, audios
