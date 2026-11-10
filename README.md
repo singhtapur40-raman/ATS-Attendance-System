@@ -12,7 +12,7 @@ Built using **Python, Streamlit, Machine Learning, and Supabase**, the applicati
 
 ## 🌐 Live Demo
 
-Check out the live website here: http://127.0.0.1:5002/
+Check out the live website here: https://spray-taekwondo-electable.ngrok-free.dev
 
 ---
 
