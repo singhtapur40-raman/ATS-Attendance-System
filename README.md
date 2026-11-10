@@ -10,6 +10,12 @@ Built using **Python, Streamlit, Machine Learning, and Supabase**, the applicati
 
 ---
 
+## 🌐 Live Demo
+
+Check out the live website here: http://127.0.0.1:5002/
+
+---
+
 ## 🚀 Key Features
 
 ### 1. Face Recognition-Based Attendance
