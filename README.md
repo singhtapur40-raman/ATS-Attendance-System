@@ -14,6 +14,8 @@ Built using **Python, Streamlit, Machine Learning, and Supabase**, the applicati
 
 Check out the live website here: https://snapclass-webiste-1.onrender.com
 
+*ALL THE STEPS AND WORKING OF WHOLE APP IS PRESENTED ON THE WEBSITE, DUE TO NON-PREMIUM VERSION OF SUPABASE IT MAY SHOW THE NEED OF BACKUP*
+
 ---
 
 ## 🚀 Key Features
