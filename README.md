@@ -12,7 +12,7 @@ Built using **Python, Streamlit, Machine Learning, and Supabase**, the applicati
 
 ## 🌐 Live Demo
 
-Check out the live website here: https://spray-taekwondo-electable.ngrok-free.dev
+Check out the live website here: https://snapclass-webiste-1.onrender.com
 
 ---
 
